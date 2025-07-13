@@ -160,6 +160,5 @@ impl<'info> Take<'info> {
         close_account(ctx)
     }
 }
-
-// custom error for expired escrow
+w
 
