@@ -1,0 +1,24 @@
+[package]
+name = "time-based-escrow"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(anchor_debug)', 'cfg(feature, values("anchor-debug"))', 'cfg(feature, values("custom-heap"))', 'cfg(feature, values("custom-panic"))', 'cfg(target_os, values("solana"))'] }
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "time_based_escrow"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+anchor-spl = "0.31.1"
